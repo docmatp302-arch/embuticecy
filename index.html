@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EmbutiCecy</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+      font-family: Calibri, Helvetica, sans-serif;
+    }
+
+    body
+    {
+      background:#fff8ef;
+      color:#2b1a10;
+    }
+
+    /* MENU */
+
+    header
+    {
+      background:linear-gradient(90deg,#111827,#7c2d12,#d97706);
+      padding:15px 5%;
+      position:fixed;
+      width:100%;
+      top:0;
+      z-index:1000;
+      box-shadow:0 4px 10px rgba(0,0,0,.3);
+    }
+
+    nav
+    {
+     display:flex;
+     justify-content:space-between;
+     align-items:center;
+     with:100%;
+    }
+
+   .logo
+   {
+    display:flex;
+    align-items:center;
+    gap:15px;
+    color:white;
+   }
+
+   .logo img
+   {
+    width:120px;
+    height:auto;
+    display:block;
+   }
+
+   .logo-texto h1
+   {
+    font-size:1.7rem;
+    margin:0;
+    color:white;
+    
+    line-height:1.1;
+   }
+
+   .logo-texto p
+   {
+    margin:0;
+    font-size:1rem;
+    color:#ffe08a;
+    letter-spacing:2px;
+    
+   }
+   .card img
+   {
+     with:100%;
+     height:300px;
+     object-fit:cover;
+   }
+
+    nav ul
+    {
+      display:flex;
+      list-style:none;
+      gap:18px;
+      flex-wrap:wrap;
+      justify-content:center;
+      align-items:center;
+      margin-left:auto;
+    }
+
+    nav ul li a
+    {
+      font-size:1.1rem;
+      white-space:nowrap;      
+      text-decoration:none;
+      color:white;
+      font-weight:bold;
+      transition:.3s;
+    }
+
+    nav ul li a:hover
+    {
+      color:#ffe08a;
+    }
+    
+    .paso{
+  text-decoration:none;
+  color:#2b1a10;
+  display:block;
+  cursor:pointer;
+}
+
+.galeria-etapa{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+
+.galeria-etapa img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  border-radius:20px;
+  box-shadow:0 10px 20px rgba(0,0,0,.18);
+}
+
+
+    /* HERO */
+
+	
+
+    .hero
+    {
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:220px 8% 80px;
+
+      background:
+      linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
+      linear-gradient(135deg,#1f2937,#7c2d12,#d97706,#fbbf24);
+      
+      color:white;
+      text-align:center;
+    }
+
+    .hero-content
+    {
+     .galeria-hero
+      {
+       display:flex;
+       justify-content:center;
+       align-items:center;
+       gap:30px;
+       flex-wrap:wrap;
+       margin-top:40px;
+      }
+
+     .galeria-hero img
+      {
+        width:280px;
+        height:280px;
+        object-fit:cover;
+        border-radius:25px;
+        box-shadow:0 10px 25px rgba(0,0,0,.35);
+        transition:.3s;
+        background:white;
+        padding:10px;
+       }
+
+     .galeria-hero img:hover
+     {
+      transform:scale(1.05);
+     }
+    }
+
+    .hero h1{
+      font-size:4rem;
+      margin-bottom:20px;
+      text-transform:uppercase;
+    }
+
+    .hero p{
+      font-size:1.3rem;
+      line-height:1.7;
+      margin-bottom:30px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:14px 30px;
+      background:#f59e0b;
+      color:white;
+      text-decoration:none;
+      border-radius:40px;
+      font-weight:bold;
+      transition:.3s;
+    }
+
+    .btn:hover{
+      background:#ffcf70;
+      color:#5c1c12;
+      transform:scale(1.05);
+    }
+
+    /* SECCIONES */
+
+    section{
+      padding:90px 4%;
+      scroll-margin-top:80px;
+    }
+
+    .titulo{
+      text-align:center;
+      font-size:2.7rem;
+      margin-bottom:50px;
+      color:#8b1e13;
+    }
+
+    /* QUIENES SOMOS */
+  
+    .quienes div
+     { 
+      width:100%;
+     }
+    
+    .quienes
+    {
+      display:grid;
+      grid-template-columns:40% 60%;
+      gap:40px;
+      align-items:star;
+    }
+
+    .quienes img{
+      width:70%;
+      border-radius:20px;
+      box-shadow:0 10px 25px rgba(0,0,0,.2);
+      margin-top:-30px;
+    }
+
+    .quienes p
+     {
+      font-size:1.15rem;
+      line-height:1.8;
+      text-align:justify;
+      text-justify:inter-word;
+     
+      transform:translate(-35px, -30px);
+     }
+
+    /* PRODUCTOS */
+
+    .productos{
+      background:#fff1dc;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:30px;
+    }
+
+    .card{
+      background:white;
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:0 10px 20px rgba(0,0,0,.15);
+      transition:.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+    }
+
+    .card img{
+      width:100%;
+      height:320px;
+      object-fit:contain;
+      background:white;
+      padding:10px;
+    }
+
+    .card-content{
+      padding:25px;
+      text-align:center;
+    }
+
+    .card-content h3{
+      color:#9a1d12;
+      margin-bottom:15px;
+      font-size:2rem;
+    }
+
+    /* PROCESO */
+
+    #proceso
+     { 
+      padding-bottom:220px;
+      overflow:hidden;
+      position:relative;
+     }
+     #etapa-seleccion,
+     #etapa-preparacion,
+     #etapa-produccion,
+     #etapa-distribucion
+     {
+       min-height:100vh;
+       padding-bottom:180;
+     }
+   .proceso-grid
+    {
+     display:grid;
+     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+     gap:50px;
+     text-align:center;
+     margin-bottom:80px;
+    }
+
+   .paso
+   {
+     background:white;
+     padding:30px;
+     border-radius:20px;
+     box-shadow:0 10px 20px rgba(0,0,0,.12);
+     text-decoration:none;
+     color:#2b1a10;
+     display:block;
+     cursor:pointer;
+     transition:.3s;
+    }
+
+   .paso:hover
+   {
+    transform:translateY(-10px);
+    background:#fff1dc;
+   }
+
+  .paso span
+   {
+    display:inline-block;
+    width:60px;
+    height:60px;
+    line-height:60px;
+    border-radius:50%;
+    background:#c2410c;
+    color:white;
+    font-size:3rem;
+    font-weight:bold;
+    margin-bottom:20px;
+   }
+
+  .galeria-etapa
+   {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    margin-top:40px
+   }
+
+  .galeria-etapa img
+   {
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    border-radius:20px;
+    box-shadow:0 10px 20px rgba(0,0,0,.18);
+   }
+
+
+    
+    /* FACEBOOK */
+
+    .facebook
+     {
+      background:linear-gradient(90deg,#7c1d12,#b45309);
+      color:white;
+      text-align:center;
+      border-radius:20px;
+      padding:80px 40px;
+      max-width:1000px;
+      margin:auto;
+      box-shadow: 0 10px 25px rgba(0,0,0,.25);
+    }
+
+    .facebook > a
+     {
+      display:inline-block;
+      margin-top:25px;
+      padding:15px 35px;
+      background:white;
+      color:#8b1e13;
+      text-decoration:none;
+      font-weight:bold;
+      border-radius:40px;
+      transition:.3s;
+    }
+
+    .facebook a:hover{
+      background:#ffe7b0;
+    }
+
+       .redes-sociales{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:25px;
+  flex-wrap:wrap;
+  margin-top:35px;
+}
+
+.social-btn{
+  display:flex !important;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  padding:15px 30px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:bold;
+  font-size:1.1rem;
+  transition:.3s;
+  color:white !important;
+  min-width:180px;
+}
+
+.social-btn img{
+  width:32px;
+  height:32px;
+  object-fit:contain;
+  display:block;
+}
+
+
+
+
+.facebook-btn
+ {
+  background:#9a1d12;
+  color:white !important;
+}
+
+.instagram-btn{
+  background:linear-gradient(45deg,#b45309,#d97706);
+  color:white !important;
+}
+
+.tiktok-btn
+{
+  background:#5c1c12;
+  Color:white !important;
+}
+
+.social-btn:hover{
+  transform:scale(1.08);
+  opacity:.9;
+}
+
+    footer{
+      background:#2d140d;
+      color:white;
+      text-align:center;
+      padding:25px;
+      margin-top:50px;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:900px)
+     {
+       .galeria-hero omg
+       {
+         with:220px;
+         heigth:220px;
+       }
+      nav{
+        flex-direction:column;
+        gap:20px;
+      }
+
+      nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .hero h1{
+        font-size:2.7rem;
+      }
+
+      .quienes{
+        grid-template-columns:1fr;
+      }
+    }
+  .texto-quienes
+   {
+     with:100%;
+     max-width:100%;
+   }
+
+   .texto-quienes p
+    {
+     text-align:justify !important;
+     text-align-last:left;
+     line-heigth:1.8;
+     font-size:1.15rem;
+     margin-bottom:18px;
+    }
+
+
+  </style>
+</head>
+
+<body>
+
+  <!-- MENU -->
+
+  <header>
+    <nav>
+
+     <div class="logo">
+
+  <img src="logoembutiCecy.png" alt="Logo embuticecy">
+
+  <div class="logo-texto">
+    <h1>EMBUTICECY</h1>
+    <p>Calidad que se siente<br> sabor que se recuerda</p>
+  </div>
+
+</div>
+
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#quienes">Quiénes Somos</a></li>
+        <li><a href="#productos">Línea de Productos</a></li>
+        <li><a href="#proceso">Proceso</a></li>
+        <li><a href="#costos">Costos y Punto de Equilibrio</a></li>
+        <li><a href="#publicidad">Publicidad</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+
+  <section class="hero" id="inicio">
+
+    <div class="hero-content">
+      <h1>EmbutiCecy<br> </h1>
+        <div class="galeria-hero">
+        <img src="CecyFarra2.png" alt="Butifarras">
+        <img src="CecyLong.png" alt="Longaniza">
+       
+
+</div>
+      
+
+    </div>
+
+  </section>
+
+  <!-- QUIENES SOMOS -->
+
+  <section id="quienes">
+
+    <h2 class="titulo">¿Quiénes Somos?</h2>
+
+    <div class="quienes">
+
+      <img src="logoembutiCecy.png" alt="EmbutiCecy">
+
+      <div class="texto-quienes">
+        <p>
+EmbutiCecy es una empresa estudiantil originada en el Cecyte Plantel 3 Tequila, Jalapa, creada con el propósito de impulsar el talento emprendedor de los jovenes mediante la elaboración de productos cárnicos artesanales de alta calidad.   
+        </p>
+
+        <br>
+
+        <p>
+Nos especializamos en la producción de longaniza y butifarras artesanales, elaboradas con ingredientes seleccionados, recetas tradicionales y procesos cuidadosamente supervisados para garantizar sabor, frescura y calidad en cada producto. 
+        </p>
+
+        <br>
+
+        <p>
+Gracias a la ayuda de Factoría cárnica: algoritmos de sabor, buscamos combinar innovación, creatividad y tradición gastronómica para fortalecer pequeños emprendimientos locales, demostrando que el esfuerzo, la pasión y el trabajo puede transformarse en oportunidades reales de crecimiento.
+        </p>
+       <br>
+<p>
+En Embuticecy trabajamos con compromiso, responsabilidad y orgullo por nuestras raíces, llevando a cada familia productos elaborados con dedicación y el autentico sabor artesanal que nos distingue. 
+</p>      
+</div>
+
+    </div>
+
+  </section>
+
+  <!-- PRODUCTOS -->
+
+  <section id="productos" class="productos">
+
+    <h2 class="titulo">Línea de Productos</h2>
+
+    <div class="cards">
+   
+ <div class="card">
+   <img src="CecyFarra2.png" alt="Butifarras">
+   <div class="card-content">
+    <h3>Butifarras</h3>
+    <p>
+      Elaboradas con ingredientes frescos,
+      textura artesanal y un sabor tradicional
+      que conserva la esencia de nuestra cocina.
+    </p>
+    <br>
+     <a href="#receta-butifarra" class="btn">
+      Ver Más
+    </a>
+   </div>
+  </div>
+      
+
+    <div class="card">
+      <img src="CecyLong.png" alt="Longaniza Roja">
+      <div class="card-content">
+      <h3>Longaniza</h3>
+      <p>
+       Sabor intenso y tradicional.
+       Elaborada con carne seleccionada
+       y especias naturales que realzan
+       cada preparación.
+    </p>
+    <br>
+      <a href="#receta-longaniza" class="btn">
+       Ver Más
+      </a>
+    </div>
+   </div>
+</div>
+
+  </section>
+
+<!-- RECETA BUTIFARRA -->
+
+<section id="receta-butifarra">
+
+  <h2 class="titulo">Butifarras Artesanales</h2>
+
+  <div class="quienes">
+
+    <img src="butifarras.png" alt="Butifarras">
+
+    <div>
+
+      <h3>Ingredientes</h3>
+
+      <br>
+
+      <ul>
+        <li>Carne de cerdo seleccionada</li>
+        <li>Ajo natural</li>
+        <li>Sal y pimienta</li>
+        <li>Especias tradicionales</li>
+        <li>Tripa natural</li>
+      </ul>
+
+      <br><br><br>
+
+      <h3>Proceso de Preparación</h3>
+
+      <br><br>
+
+      <p>
+        Las butifarras son preparadas con carne fresca,
+        condimentadas artesanalmente y embutidas en tripa natural
+        para conservar su sabor tradicional.
+      </p>
+      <br>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- RECETA LONGANIZA -->
+
+<section id="receta-longaniza" class="productos">
+
+  <h2 class="titulo">Longaniza Roja</h2>
+
+  <div class="quienes">
+
+    <img src="longaniza-roja.png" alt="Longaniza">
+
+    <div>
+       <br>
+      <h3>Ingredientes</h3>
+
+      <br>
+
+      <ul>
+        <li>Carne de cerdo</li>
+        <li>Chile rojo natural</li>
+        <li>Pimentón</li>
+        <li>Ajo y especias</li>
+        <li>Hierbas aromáticas</li>
+      </ul>
+
+      <br><br>
+
+      <h3>Proceso de Preparación</h3>
+      <br>
+      <br>
+
+      <p>
+        La longaniza roja se elabora con una mezcla especial
+        de especias y chile natural que le proporciona
+        su característico sabor intenso y color tradicional.
+      </p>
+      <br>
+
+    </div>
+
+  </div>
+
+</section>
+
+  <!-- PROCESO -->
+
+  <section id="proceso">
+
+  <h2 class="titulo">Proceso de Elaboración</h2>
+
+  <div class="proceso-grid">
+
+    <a href="#etapa-seleccion" class="paso">
+      <span>1</span>
+      <h3>Selección</h3>
+      <p>Elegimos ingredientes frescos y de alta calidad.</p>
+    </a>
+
+    <a href="#etapa-preparacion" class="paso">
+      <span>2</span>
+      <h3>Preparación</h3>
+      <p>Mezclamos especias y recetas tradicionales.</p>
+    </a>
+
+    <a href="#etapa-produccion" class="paso">
+      <span>3</span>
+      <h3>Producción</h3>
+      <p>Elaboramos cada producto con procesos higiénicos y seguros.</p>
+    </a>
+
+    <a href="#etapa-distribucion" class="paso">
+      <span>4</span>
+      <h3>Distribución</h3>
+      <p>Llevamos el sabor de EmbutiCecy hasta nuestros clientes.</p>
+    </a>
+
+  </div>
+
+</section>
+
+<section id="etapa-seleccion" class="productos">
+  <h2 class="titulo">Etapa 1: Selección</h2>
+  <div class="galeria-etapa">
+    <img src="seleccion3.jpg" alt="Selección de ingredientes">
+    <img src="seleccion2.jpg" alt="Carne seleccionada">
+    <img src="seleccion4.jpg" alt="Ingredientes frescos">
+  </div>
+</section>
+
+<section id="etapa-preparacion">
+  <h2 class="titulo">Etapa 2: Preparación</h2>
+  <div class="galeria-etapa">
+    <img src="preparacion1.jpg" alt="Preparación de mezcla">
+    <img src="preparacion2.jpg" alt="Condimentos">
+    <img src="preparacion3.jpg" alt="Proceso artesanal">
+  </div>
+</section>
+
+<section id="etapa-produccion" class="productos">
+  <h2 class="titulo">Etapa 3: Producción</h2>
+  <div class="galeria-etapa">
+    <img src="produccion.jpg" alt="Producción de embutidos">
+    <img src="produccion3.jpg" alt="Butifarras y longaniza">
+    <img src="produccion1.jpg" alt="Proceso higiénico">
+  </div>
+</section>
+
+<section id="etapa-distribucion">
+  <h2 class="titulo">Etapa 4: Distribución</h2>
+  <div class="galeria-etapa">
+    <img src="distribucion.jpg" alt="Empaque del producto">
+    <img src="distribucion2.jpg" alt="Producto terminado">
+    <img src="distribucion-3.png" alt="Entrega al cliente">
+  </div>
+</section>
+
+<!-- COSTOS -->
+
+<section id="costos">
+ <h2 class="titulo">
+   Costos y punto de equilibrio
+  </h2>
+
+<div class="modulo-financiero">
+    
+    <style>
+        .modulo-financiero {
+            --color-rojo: #8B261A;
+            --color-naranja: #D96B27;
+            --color-verde: #1E5933;
+            --color-gris-claro: #F4EBE1;
+            --color-texto: #2C1A11;
+            Display:grid;
+            Grid-templete-columns:1fr 1fr;
+            
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--color-texto);
+            background-color: var(--color-gris-claro);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--color-verde);
+            width:100%;
+            max-width:100%;
+            margin: 20px 0;
+        }
+
+        .modulo-financiero h2 {
+            font-family: 'Georgia', serif;
+            color: var(--color-rojo);
+            font-size: 18pt;
+            margin-top: 0;
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 5px solid var(--color-naranja);
+        }
+
+        .modulo-financiero p {
+            font-size: 10.5pt;
+            line-height: 1.4;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .formula-box {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 11pt;
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #E0D5C1;
+        }
+
+        .math-style {
+            font-family: 'Times New Roman', serif;
+            font-style: italic;
+            font-weight: bold;
+            color: var(--color-rojo);
+        }
+
+        .calc-container {
+            background-color: #FFFFFF;
+            border: 2px dashed var(--color-naranja);
+            border-radius: 6px;
+            padding: 20px;
+        }
+
+        .calc-container h3 {
+            margin-top: 0;
+            color: var(--color-rojo);
+            font-family: 'Georgia', serif;
+            font-size: 13pt;
+            margin-bottom: 5px;
+        }
+
+        .calc-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+        }
+
+        .calc-table td {
+            padding: 8px 4px;
+            font-size: 10pt;
+        }
+
+        .calc-table label {
+            font-weight: bold;
+        }
+
+        .calc-table input {
+            width: 100%;
+            padding: 7px;
+            border: 1px solid #CCC;
+            border-radius: 4px;
+            font-size: 10pt;
+            color: var(--color-texto);
+            outline: none;
+        }
+        
+        .calc-table input:focus {
+            border-color: var(--color-naranja);
+        }
+
+        .box-resultado {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #E8F0EC;
+            border-radius: 4px;
+            border-left: 4px solid var(--color-verde);
+            text-align: center;
+        }
+
+        .titulo-resultado {
+            font-size: 9.5pt;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .monto-resultado {
+            font-size: 16pt;
+            font-weight: bold;
+            color: var(--color-verde);
+            margin-top: 5px;
+            transition: color 0.3s ease;
+        }
+    </style>
+
+    
+    <p>
+        Para mantener la salud financiera de la empresa, aplicamos el modelo matemático del punto de equilibrio, determinando la cantidad mínima de kilogramos que se deben comercializar para cubrir la totalidad de los costos operativos.
+    </p>
+    
+    <div class="formula-box">
+        <span class="math-style">Punto de Equilibrio (Q) = Costos Fijos Totales / (Precio Venta − Costo Variable Unitario)</span>
+    </div>
+
+    <div class="calc-container">
+        <h3>Simulador Financiero Interactivo</h3>
+        <p style="font-size: 9pt; color: #666; margin-top: 0;">Ajusta los valores para calcular nuevos escenarios en tiempo real:</p>
+        
+        <table class="calc-table">
+            <tr>
+                <td style="width: 60%;"><label for="costosFijosInd">Costos Fijos Totales Mensuales ($):</label></td>
+                <td style="width: 40%;"><input type="number" id="costosFijosInd" value="12000" oninput="calcularModuloEquilibrio()"></td>
+            </tr>
+            <tr>
+                <td><label for="precioVentaInd">Precio de Venta por Kg ($):</label></td>
+                <td><input type="number" id="precioVentaInd" value="180" oninput="calcularModuloEquilibrio()"></td>
+            </tr>
+            <tr>
+                <td><label for="costoVariableInd">Costo Variable por Kg ($):</label></td>
+                <td><input type="number" id="costoVariableInd" value="100" oninput="calcularModuloEquilibrio()"></td>
+            </tr>
+        </table>
+
+        <div class="box-resultado">
+            <div class="titulo-resultado">VOLUMEN MÍNIMO DE VENTAS REQUERIDO:</div>
+            <div id="resultadoQInd" class="monto-resultado">150.00 Kg / mes</div>
+            <div style="font-size: 8.5pt; color: #555; margin-top: 5px;">A partir de este volumen, la factoría genera utilidades líquidas.</div>
+        </div>
+    </div>
+
+    <script>
+        function calcularModuloEquilibrio() {
+            // Captura de datos de los inputs del usuario
+            var cf = parseFloat(document.getElementById('costosFijosInd').value) || 0;
+            var pv = parseFloat(document.getElementById('precioVentaInd').value) || 0;
+            var cv = parseFloat(document.getElementById('costoVariableInd').value) || 0;
+            
+            var campoResultado = document.getElementById('resultadoQInd');
+            
+            // Lógica algorítmica para evitar divisiones entre cero o resultados negativos
+            if (pv > cv) {
+                var q = cf / (pv - cv);
+                campoResultado.innerHTML = q.toFixed(2) + " Kg / mes";
+                campoResultado.style.color = "var(--color-verde)";
+            } else {
+                campoResultado.innerHTML = "El precio debe ser mayor al costo variable";
+                campoResultado.style.color = "var(--color-rojo)";
+            }
+        }
+
+        // Ejecutar cálculo automático apenas cargue la sección
+        document.addEventListener("DOMContentLoaded", function() {
+            calcularModuloEquilibrio();
+        });
+    </script>
+</div>
+</section>
+
+  <!-- FACEBOOK -->
+
+  <section id="publicidad">
+    <div class="facebook">
+      <h2 class="titulo" style="color:white;">
+        Publicidad
+      </h2>
+       <p>
+         Conoce nuestra promociones, productos y novedades de EmbutiCecy.
+       </p>
+
+    <div class="redes-sociales">
+      <a href="https://www.facebook.com/share/1BTtzmnaw5/" target="_blank" class="social-btn facebook-btn">
+      <img src="facebook.png" alt="Facebook">
+       Facebook
+      </a>
+
+     <a href="https://www.instagram.com/embuticecy.oficial?igsh=MWx2MTRxaWgyd295aw==" target="_blank" class="social-btn instagram-btn">
+      <img src="instagram.png" alt="Instagram">
+       Instagram
+     </a>
+
+  <a href="https://acortar.link/WPAGlH" target="_blank" class="social-btn tiktok-btn">
+    <img src="tiktok.png" alt="TikTok">
+    TikTok
+  </a>
+
+</div>
+</div>
+    
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    <p>
+      © 2026 EmbutiCecy | Calidad que se siente, sabor que se recuerda
+    </p>
+  </footer>
+
+</body>
+</html>
