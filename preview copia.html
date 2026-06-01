@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Factoría Cárnica | EmbutiCecy</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+      font-family: Calibri, Helvetica, sans-serif;
+    }
+
+    body{
+      background:#fff8ef;
+      color:#2b1a10;
+    }
+
+    /* MENU */
+
+    header{
+      background:linear-gradient(90deg,#6b1d12,#b02a1f,#d97706);
+      padding:15px 8%;
+      position:fixed;
+      width:100%;
+      top:0;
+      z-index:1000;
+      box-shadow:0 4px 10px rgba(0,0,0,.3);
+    }
+
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      color:white;
+      font-weight:bold;
+      font-size:1.3rem;
+    }
+
+    .logo img{
+      width:60px;
+      height:60px;
+      border-radius:50%;
+      background:white;
+      padding:5px;
+    }
+
+    nav ul{
+      display:flex;
+      list-style:none;
+      gap:25px;
+    }
+
+    nav ul li a{
+      text-decoration:none;
+      color:white;
+      font-weight:bold;
+      transition:.3s;
+    }
+
+    nav ul li a:hover{
+      color:#ffe08a;
+    }
+
+    /* HERO */
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:140px 8% 80px;
+      background:
+      linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
+      url('logoembutiCecy.png') center/contain no-repeat,
+      linear-gradient(120deg,#6b1d12,#c2410c);
+      color:white;
+      text-align:center;
+    }
+
+    .hero-content{
+      max-width:900px;
+    }
+
+    .hero h1{
+      font-size:4rem;
+      margin-bottom:20px;
+      text-transform:uppercase;
+    }
+
+    .hero p{
+      font-size:1.3rem;
+      line-height:1.7;
+      margin-bottom:30px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:14px 30px;
+      background:#f59e0b;
+      color:white;
+      text-decoration:none;
+      border-radius:40px;
+      font-weight:bold;
+      transition:.3s;
+    }
+
+    .btn:hover{
+      background:#ffcf70;
+      color:#5c1c12;
+      transform:scale(1.05);
+    }
+
+    /* SECCIONES */
+
+    section{
+      padding:90px 10%;
+    }
+
+    .titulo{
+      text-align:center;
+      font-size:2.7rem;
+      margin-bottom:50px;
+      color:#8b1e13;
+    }
+
+    /* QUIENES SOMOS */
+
+    .quienes{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:40px;
+      align-items:center;
+    }
+
+    .quienes img{
+      width:100%;
+      border-radius:20px;
+      box-shadow:0 10px 25px rgba(0,0,0,.2);
+    }
+
+    .quienes p{
+      font-size:1.1rem;
+      line-height:1.8;
+    }
+
+    /* PRODUCTOS */
+
+    .productos{
+      background:#fff1dc;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:30px;
+    }
+
+    .card{
+      background:white;
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:0 10px 20px rgba(0,0,0,.15);
+      transition:.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+    }
+
+    .card img{
+      width:100%;
+      height:230px;
+      object-fit:cover;
+    }
+
+    .card-content{
+      padding:25px;
+      text-align:center;
+    }
+
+    .card-content h3{
+      color:#9a1d12;
+      margin-bottom:15px;
+      font-size:1.5rem;
+    }
+
+    /* PROCESO */
+
+    .proceso-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:30px;
+      text-align:center;
+    }
+
+    .paso{
+      background:white;
+      padding:30px;
+      border-radius:20px;
+      box-shadow:0 10px 20px rgba(0,0,0,.12);
+    }
+
+    .paso span{
+      display:inline-block;
+      width:60px;
+      height:60px;
+      line-height:60px;
+      border-radius:50%;
+      background:#c2410c;
+      color:white;
+      font-size:1.5rem;
+      font-weight:bold;
+      margin-bottom:20px;
+    }
+
+    /* FACEBOOK */
+
+    .facebook{
+      background:linear-gradient(90deg,#7c1d12,#b45309);
+      color:white;
+      text-align:center;
+      border-radius:20px;
+    }
+
+    .facebook a{
+      display:inline-block;
+      margin-top:25px;
+      padding:15px 35px;
+      background:white;
+      color:#8b1e13;
+      text-decoration:none;
+      font-weight:bold;
+      border-radius:40px;
+      transition:.3s;
+    }
+
+    .facebook a:hover{
+      background:#ffe7b0;
+    }
+
+    footer{
+      background:#2d140d;
+      color:white;
+      text-align:center;
+      padding:25px;
+      margin-top:50px;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:900px){
+
+      nav{
+        flex-direction:column;
+        gap:20px;
+      }
+
+      nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .hero h1{
+        font-size:2.7rem;
+      }
+
+      .quienes{
+        grid-template-columns:1fr;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- MENU -->
+
+  <header>
+    <nav>
+
+      <div class="logo">
+        <img src="logoembutiCecy.png" alt="Logo EmbutiCecy">
+        <span>EmbutiCecy</span>
+      </div>
+
+      <ul>
+        <li><a href="#quienes">Quiénes Somos</a></li>
+        <li><a href="#productos">Línea de Productos</a></li>
+        <li><a href="#proceso">Proceso</a></li>
+        <li><a href="#facebook">Facebook</a></li>
+      </ul>
+
+    </nav>
+  </header>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+      <h1>Factoría Cárnica:<br>Algoritmos de Sabor</h1>
+
+      <p>
+        Impulsamos el sabor tradicional con innovación y calidad.
+        EmbutiCecy es una empresa dedicada a la elaboración y
+        comercialización de butifarras y longaniza con recetas
+        auténticas que conservan el sabor que se recuerda.
+      </p>
+
+      <a href="#productos" class="btn">
+        Ver Productos
+      </a>
+    </div>
+
+  </section>
+
+  <!-- QUIENES SOMOS -->
+
+  <section id="quienes">
+
+    <h2 class="titulo">¿Quiénes Somos?</h2>
+
+    <div class="quienes">
+
+      <img src="logoembutiCecy.png" alt="EmbutiCecy">
+
+      <div>
+        <p>
+          EmbutiCecy nace con el propósito de llevar a cada hogar
+          productos cárnicos elaborados con pasión, tradición y
+          altos estándares de calidad.
+        </p>
+
+        <br>
+
+        <p>
+          Nuestro proyecto “Factoría Cárnica: Algoritmos de Sabor”
+          combina creatividad, innovación y procesos artesanales
+          para ofrecer butifarras y longaniza con un sabor único.
+        </p>
+
+        <br>
+
+        <p>
+          Trabajamos con ingredientes seleccionados y procesos
+          cuidadosamente supervisados para garantizar frescura,
+          sabor y satisfacción en cada producto.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PRODUCTOS -->
+
+  <section id="productos" class="productos">
+
+    <h2 class="titulo">Línea de Productos</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?q=80&w=1200&auto=format&fit=crop" alt="">
+        <div class="card-content">
+          <h3>Butifarras</h3>
+          <p>
+            Elaboradas con ingredientes frescos y un sabor tradicional irresistible.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1558030006-450675393462?q=80&w=1200&auto=format&fit=crop" alt="">
+        <div class="card-content">
+          <h3>Longaniza</h3>
+          <p>
+            Producto artesanal con excelente sazón y textura premium.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?q=80&w=1200&auto=format&fit=crop" alt="">
+        <div class="card-content">
+          <h3>Especialidades</h3>
+          <p>
+            Nuevas recetas y sabores inspirados en la tradición gastronómica.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PROCESO -->
+
+  <section id="proceso">
+
+    <h2 class="titulo">Proceso de Elaboración</h2>
+
+    <div class="proceso-grid">
+
+      <div class="paso">
+        <span>1</span>
+        <h3>Selección</h3>
+        <p>
+          Elegimos ingredientes frescos y de alta calidad.
+        </p>
+      </div>
+
+      <div class="paso">
+        <span>2</span>
+        <h3>Preparación</h3>
+        <p>
+          Mezclamos especias y recetas tradicionales.
+        </p>
+      </div>
+
+      <div class="paso">
+        <span>3</span>
+        <h3>Producción</h3>
+        <p>
+          Elaboramos cada producto con procesos higiénicos y seguros.
+        </p>
+      </div>
+
+      <div class="paso">
+        <span>4</span>
+        <h3>Distribución</h3>
+        <p>
+          Llevamos el sabor de EmbutiCecy hasta nuestros clientes.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FACEBOOK -->
+
+  <section id="facebook">
+
+    <div class="facebook">
+
+      <h2 class="titulo" style="color:white;">
+        Síguenos en Facebook
+      </h2>
+
+      <p>
+        Conoce nuestras promociones, novedades y productos.
+      </p>
+
+      <a href="https://facebook.com/" target="_blank">
+        Ir a Facebook
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    <p>
+      © 2026 EmbutiCecy | Calidad que se siente, sabor que se recuerda
+    </p>
+  </footer>
+
+</body>
+</html>

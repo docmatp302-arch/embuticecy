@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factoría Cárnica: Algoritmos de Sabor | EmbutiCecy</title>
+    <style>
+        /* --- VARIABLES DE DISEÑO (Inspiradas en el logotipo) --- */
+        :root {
+            --color-principal: #8B261A;   /* Rojo terracota/embutido oscuro */
+            --color-secundario: #D96B27;  /* Naranja vibrante del texto del logo */
+            --color-acento: #1E5933;      /* Verde follaje/selva tropical */
+            --color-fondo: #FDFBF7;       /* Crema artesanal claro */
+            --color-fondo-alt: #F4EBE1;   /* Crema oscuro para secciones alternas */
+            --color-texto: #2C1A11;       /* Marrón chocolate oscuro para legibilidad */
+            --color-texto-claro: #FFFFFF;
+            --fuente-titulos: 'Georgia', serif;
+            --fuente-cuerpo: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --sombra: 0 4px 15px rgba(0,0,0,0.08);
+            --transicion: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* --- ESTILOS GENERALES Y CONFIGURACIÓN DE PÁGINA --- */
+        @page {
+            size: A4;
+            margin: 15mm 12mm;
+            background-color: var(--color-fondo);
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: var(--fuente-cuerpo);
+            color: var(--color-texto);
+            background-color: var(--color-fondo);
+            line-height: 1.25;
+            -webkit-print-color-adjust: exact;
+        }
+
+        /* --- ENCABEZADO PRINCIPAL (Full-bleed simulado en impresión) --- */
+        header {
+
+        <img src="logoembutiCecy.png" alt="Logo EmbutiCecy" style="max-width: 180px; height: auto; margin-bottom: 15px; border-radius: 50%;">
+        
+        <div class="header-title">Factoría Cárnica</div>
+        <div class="header-subtitle">Algoritmos de Sabor</div>
+        <div class="eslogan-banner">CALIDAD QUE SE SIENTE, SABOR QUE SE RECUERDA</div>
+   
+
+            background: linear-gradient(135deg, var(--color-principal), #5A140B);
+            color: var(--color-texto-claro);
+            padding: 35px 25px;
+            text-align: center;
+            border-bottom: 5px solid var(--color-secundario);
+            margin-bottom: 30px;
+        }
+
+        .header-title {
+            font-family: var(--fuente-titulos);
+            font-size: 24pt;
+            margin: 0 0 5px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+        }
+
+        .header-subtitle {
+            font-size: 13pt;
+            font-style: italic;
+            color: #F4EBE1;
+            margin: 0 0 15px 0;
+            font-weight: 300;
+        }
+
+        .eslogan-banner {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.15);
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 10pt;
+            font-weight: bold;
+            border: 1px solid rgba(255,255,255,0.25);
+            letter-spacing: 0.5px;
+        }
+
+        /* --- NAVEGACIÓN WEB (Interactiva en pantalla, limpia en PDF) --- */
+        nav {
+            background-color: var(--color-texto);
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            text-align: center;
+        }
+
+        nav table {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        nav td {
+            padding: 0;
+            text-align: center;
+        }
+
+        nav a {
+            display: block;
+            padding: 14px 10px;
+            color: #E2D3C5;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 10pt;
+            text-transform: uppercase;
+            transition: var(--transicion);
+        }
+
+        nav a:hover {
+            background-color: var(--color-secundario);
+            color: var(--color-texto-claro);
+        }
+
+        /* --- CONTENEDOR PRINCIPAL --- */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* --- SECCIONES Y BLOQUES --- */
+        section {
+            background: #FFFFFF;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 35px;
+            box-shadow: var(--sombra);
+            page-break-inside: avoid;
+            border-top: 4px solid var(--color-principal);
+        }
+
+        section.alt-bg {
+            background-color: var(--color-fondo-alt);
+            border-top: 4px solid var(--color-acento);
+        }
+
+        /* --- TIPOGRAFÍA DE SECCIONES --- */
+        h2 {
+            font-family: var(--fuente-titulos);
+            color: var(--color-principal);
+            font-size: 16pt;
+            margin-top: 0;
+            margin-bottom: 18px;
+            padding-left: 10px;
+            border-left: 5px solid var(--color-secundario);
+            page-break-after: avoid;
+        }
+
+        h3 {
+            font-family: var(--fuente-titulos);
+            color: var(--color-acento);
+            font-size: 12pt;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            page-break-after: avoid;
+        }
+
+        p {
+            font-size: 10.5pt;
+            margin: 0 0 12px 0;
+            text-align: justify;
+        }
+
+        /* --- ELEMENTOS DE DISEÑO ESPECÍFICOS --- */
+        
+        /* Lista de productos con diseño de tabla limpia */
+        .tabla-productos {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .tabla-productos th {
+            background-color: var(--color-principal);
+            color: var(--color-texto-claro);
+            padding: 10px;
+            text-align: left;
+            font-size: 10.5pt;
+        }
+
+        .tabla-productos td {
+            padding: 12px 10px;
+            border-bottom: 1px solid #E0D5C1;
+            font-size: 10pt;
+            vertical-align: top;
+        }
+
+        .tabla-productos tr:nth-child(even) {
+            background-color: rgba(139, 38, 26, 0.03);
+        }
+
+        .tag-producto {
+            display: inline-block;
+            background-color: var(--color-acento);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 8.5pt;
+            font-weight: bold;
+        }
+
+        /* Flujo de proceso (Algoritmo) */
+        .proceso-container {
+            margin-top: 15px;
+        }
+
+        .paso-bloque {
+            background: #FFFFFF;
+            border: 1px solid #E0D5C1;
+            border-left: 4px solid var(--color-secundario);
+            border-radius: 4px;
+            padding: 12px 15px;
+            margin-bottom: 12px;
+        }
+
+        .paso-numero {
+            font-weight: bold;
+            color: var(--color-secundario);
+            font-size: 11pt;
+            margin-bottom: 3px;
+        }
+
+        /* --- CALCULADORA INTERACTIVA / SECCIÓN FINANCIERA --- */
+        .calc-box {
+            background-color: #FFFFFF;
+            border: 2px dashed var(--color-secundario);
+            border-radius: 6px;
+            padding: 20px;
+            margin-top: 15px;
+        }
+
+        .grid-inputs {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+        }
+
+        .grid-inputs td {
+            padding: 6px 4px;
+            font-size: 10pt;
+        }
+
+        .grid-inputs label {
+            font-weight: bold;
+        }
+
+        .grid-inputs input {
+            width: 100%;
+            padding: 6px;
+            border: 1px solid #CCC;
+            border-radius: 4px;
+            font-size: 10pt;
+            color: var(--color-texto);
+        }
+
+        .btn-calcular {
+            background-color: var(--color-principal);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 11pt;
+            text-transform: uppercase;
+            transition: var(--transicion);
+        }
+
+        .btn-calcular:hover {
+            background-color: #5A140B;
+        }
+
+        .resultado-box {
+            margin-top: 15px;
+            padding: 12px;
+            background-color: #E8F0EC;
+            border-radius: 4px;
+            border-left: 4px solid var(--color-acento);
+            text-align: center;
+        }
+
+        .resultado-destacado {
+            font-size: 14pt;
+            font-weight: bold;
+            color: var(--color-acento);
+            margin-top: 5px;
+        }
+
+        /* --- NOTAS DE MATEMÁTICAS --- */
+        .math {
+            font-family: 'Times New Roman', serif;
+            font-style: italic;
+            font-weight: bold;
+            color: var(--color-principal);
+        }
+
+        /* --- ENLACE REDES SOCIALES / BOTÓN --- */
+        .fb-container {
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        .btn-facebook {
+            display: inline-block;
+            background-color: #1877F2;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 11pt;
+            box-shadow: 0 4px 10px rgba(24,119,242,0.3);
+            transition: var(--transicion);
+        }
+
+        .btn-facebook:hover {
+            background-color: #145DBF;
+            transform: translateY(-2px);
+        }
+
+        /* --- PIE DE PÁGINA --- */
+        footer {
+            background-color: var(--color-texto);
+            color: #A89587;
+            text-align: center;
+            padding: 25px 15px;
+            margin-top: 40px;
+            font-size: 9pt;
+            border-top: 3px solid var(--color-secundario);
+        }
+
+        footer p {
+            text-align: center;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ENCABEZADO DE LA MARCA -->
+    <header>
+        <div class="header-title">Factoría Cárnica</div>
+        <div class="header-subtitle">Algoritmos de Sabor</div>
+        <div class="eslogan-banner">CALIDAD QUE SE SIENTE, SABOR QUE SE RECUERDA</div>
+    </header>
+
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <nav>
+        <table>
+            <tr>
+                <td><a href="#quienes-somos">Quiénes Somos</a></td>
+                <td><a href="#productos">Productos</a></td>
+                <td><a href="#proceso">Elaboración</a></td>
+                <td><a href="#costos">Costos y Equilibrio</a></td>
+                <td><a href="#contacto">Contacto</a></td>
+            </tr>
+        </table>
+    </nav>
+
+    <div class="container" style="margin-top: 30px;">
+
+        <!-- SECCIÓN: QUIÉNES SOMOS -->
+        <section id="quienes-somos">
+            <h2>Quiénes Somos</h2>
+            <p>
+                <strong>Factoría Cárnica: Algoritmos de Sabor</strong> es la plataforma estratégica e identitaria desarrollada para impulsar y consolidar la presencia en el mercado de <strong>EmbutiCecy</strong>. Nacemos con el firme propósito de comercializar y distribuir los más selectos embutidos artesanales, especializándonos en la elaboración tradicional de <strong>butifarras y longaniza</strong> con un estándar de excelencia gastronómica.
+            </p>
+            <p>
+                Inspirados en la riqueza cultural, la exuberancia de los campos tradicionales y la pureza de los ingredientes —elementos plasmados con orgullo en nuestro logotipo corporativo—, fusionamos las recetas heredadas con una gestión técnica precisa ("algoritmos de sabor"). Esto nos permite garantizar consistencia, frescura y una experiencia sensorial inigualable en cada pieza, cumpliendo nuestra promesa dorada: <em>"Calidad que se siente, sabor que se recuerda"</em>.
+            </p>
+        </section>
+
+        <!-- SECCIÓN: LÍNEA DE PRODUCTOS -->
+        <section id="productos" class="alt-bg">
+            <h2>Línea de Productos</h2>
+            <p>Nuestra selección se compone de piezas maestras cárnicas, preparadas bajo estrictas normas de higiene y con una selección premium de materias primas y condimentos de la región.</p>
+            
+            <table class="tabla-productos">
+                <thead>
+                    <tr>
+                        <th style="width: 30%;">Producto</th>
+                        <th style="width: 20%;">Categoría</th>
+                        <th style="width: 50%;">Descripción de Sabor y Composición</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Butifarra Tradicional</strong></td>
+                        <td><span class="tag-producto">Especialidad</span></td>
+                        <td>Elaborada con carne magra de cerdo seleccionada, molida al punto exacto, sazonada con nuestra exclusiva mezcla de pimienta, especias secretas y un toque sutil de hierbas aromáticas. Embutida en tripa natural.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Longaniza Artesanal</strong></td>
+                        <td><span class="tag-producto">Premium</span></td>
+                        <td>Una pieza balanceada de carne de cerdo y notas selectas de grasa noble, marinada con achiote natural, ajo fresco y una sutil combinación de vinagres artesanales que aportan un color característico y un sabor profundo y ahumado.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- SECCIÓN: PROCESO DE ELABORACIÓN -->
+        <section id="proceso">
+            <h2>Proceso de Elaboración: Algoritmos de Precisión</h2>
+            <p>Cada pieza de EmbutiCecy sigue un flujo sistémico y riguroso para asegurar la máxima calidad:</p>
+            
+            <div class="proceso-container">
+                <div class="paso-bloque">
+                    <div class="paso-numero">1. Selección y Molienda Crítica</div>
+                    <div class="paso-content">Inspección de cortes magros de cerdo. La carne se procesa a temperaturas controladas para preservar la integridad de la proteína.</div>
+                </div>
+                <div class="paso-bloque">
+                    <div class="paso-numero">2. Dosificación y Homogeneización (El Algoritmo)</div>
+                    <div class="paso-content">Incorporación exacta de los condimentos y especias según la fórmula maestra de EmbutiCecy, logrando un mezclado perfectamente uniforme.</div>
+                </div>
+                <div class="paso-bloque">
+                    <div class="paso-numero">3. Embutido en Tripa Natural</div>
+                    <div class="paso-content">Introducción de la masa cárnica en tripas naturales de primera calidad, asegurando un porcionado firme y libre de burbujas de aire.</div>
+                </div>
+                <div class="paso-bloque">
+                    <div class="paso-numero">4. Maduración Controlada y Empaque</div>
+                    <div class="paso-content">Reposo térmico y secado superficial que consolida el sabor y aroma característicos, seguido de un empaque inmediato para su óptima conservación.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: COSTOS Y PUNTO DE EQUILIBRIO -->
+        <section id="costos" class="alt-bg">
+            <h2>Costos y Punto de Equilibrio</h2>
+            <p>
+                Para mantener la salud financiera de la empresa, aplicamos el modelo matemático del punto de equilibrio, determinando la cantidad mínima de kilogramos que se deben comercializar para cubrir la totalidad de los costos.
+            </p>
+            
+            <div style="text-align:center; margin:1.5em 0; font-size:1.15em;">
+                <span class="math">Punto de Equilibrio (Q) = Costos Fijos Total / (Precio de Venta − Costo Variable Unitario)</span>
+            </div>
+
+            <!-- CALCULADORA INTERACTIVA -->
+            <div class="calc-box">
+                <h3 style="margin-top:0; color:var(--color-principal);">Simulador Financiero Interactivo</h3>
+                <p style="font-size:9.5pt; color:#666;">Modifica los valores predeterminados para simular diferentes escenarios económicos en tiempo real:</p>
+                
+                <table class="grid-inputs">
+                    <tr>
+                        <td style="width: 60%;"><label for="costosFijos">Costos Fijos Totales Mensuales ($):</label></td>
+                        <td style="width: 40%;"><input type="number" id="costosFijos" value="12000" oninput="calcularPuntoEquilibrio()"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="precioVenta">Precio de Venta por Kg ($):</label></td>
+                        <td><input type="number" id="precioVenta" value="180" oninput="calcularPuntoEquilibrio()"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="costoVariable">Costo Variable por Kg ($):</label></td>
+                        <td><input type="number" id="costoVariable" value="100" oninput="calcularPuntoEquilibrio()"></td>
+                    </tr>
+                </table>
+
+                <div class="resultado-box">
+                    <div style="font-size: 10pt; font-weight: bold; color: var(--color-texto);">VOLUMEN DE VENTAS REQUERIDO:</div>
+                    <div id="resultadoQ" class="resultado-destacado">150.00 Kg / mes</div>
+                    <div style="font-size: 9pt; color: #555; margin-top: 4px;">A partir de este volumen, la factoría genera utilidades líquidas.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: CONTACTO Y ENLACE A REDES -->
+        <section id="contacto">
+            <h2>Impulsa con Nosotros el Sabor Real</h2>
+            <p>¿Deseas realizar un pedido, volverte distribuidor autorizado o conocer más de nuestra Factoría Cárnica? Estamos a un solo clic de distancia. Síguenos en nuestras redes sociales para conocer promociones y dinámicas exclusivas.</p>
+            
+            <div class="fb-container">
+                <a href="https://www.facebook.com" target="_blank" class="btn-facebook">
+                    Visítanos en Facebook
+                </a>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <p><strong>Factoría Cárnica: Algoritmos de Sabor</strong> &copy; 2026 | Impulsando a <strong>EmbutiCecy</strong></p>
+        <p>Calidad que se siente, sabor que se recuerda.</p>
+    </footer>
+
+    <!-- LÓGICA INTERACTIVA (JAVASCRIPT) -->
+    <script>
+        function calcularPuntoEquilibrio() {
+            // Obtener los valores numéricos ingresados por el usuario
+            var cf = parseFloat(document.getElementById('costosFijos').value) || 0;
+            var pv = parseFloat(document.getElementById('precioVenta').value) || 0;
+            var cv = parseFloat(document.getElementById('costoVariable').value) || 0;
+            
+            var resultadoElemento = document.getElementById('resultadoQ');
+            
+            // Validar que el precio de venta sea estrictamente mayor que el costo variable
+            if (pv > cv) {
+                var q = cf / (pv - cv);
+                // Mostrar el resultado formateado a dos decimales
+                resultadoElemento.innerHTML = q.toFixed(2) + " Kg / mes";
+                resultadoElemento.style.color = "var(--color-acento)";
+            } else {
+                // Mensaje de alerta si el modelo matemático no es sustentable
+                resultadoElemento.innerHTML = "Precio debe ser mayor al costo variable";
+                resultadoElemento.style.color = "var(--color-principal)";
+            }
+        }
+        
+        // Ejecución inicial automática al cargar el documento por primera vez
+        window.onload = function() {
+            calcularPuntoEquilibrio();
+        };
+    </script>
+</body>
+</html>
